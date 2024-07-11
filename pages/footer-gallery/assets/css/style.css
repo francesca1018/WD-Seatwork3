@@ -265,7 +265,8 @@ transition: ease;
     animation: fade 5s ;
   }
 }
-.rock-band-footer .icon:hover {
+
+.animated .rock-band-footer .icon:hover {
   color:#ff7a7a;
   transition:0.3s;
   text-shadow: 
