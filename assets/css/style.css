@@ -1,0 +1,121 @@
+body, html {
+    width: 100vw;;
+    height: 100vh; /* Ensure the body and html take full height */
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.background-container {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/computer-hub.png");
+    background-size: cover; /* Use cover instead of contain */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    position: relative; /* Relative positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hide the checkbox */
+#toggle {
+    display: none;
+}
+
+/* Style the label to act as the clickable glowing box */
+.square {
+    transform: translate(0px, -10vh); /* Combine both translations */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center;
+    opacity: 80%;
+    filter: blur(50px);
+    justify-content: center;
+    width: 350px; /* Initial width */
+    height: 350px; /* Initial height */
+    mix-blend-mode: screen;
+    background-repeat: no-repeat;
+    background-blend-mode: color-dodge;
+    background-color: rgb(60, 0, 255); /* Semi-transparent background */
+    border-radius: 50%; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer to indicate clickability */
+    transition: width 0.3s, height 0.3s; /* Add transition effect */
+    text-align: center; /* Center text */
+}
+
+/* When the checkbox is checked, make the square bigger */
+#toggle:checked + .square {
+    background-image: url("../img/screen-overlay.jpg");
+    background-size: cover;
+    box-shadow: 10px 5px 10px rgb(91, 41, 255); /* Glowing effect */
+    mix-blend-mode: normal;
+    filter: blur(0px);
+    border-radius: 10px; /* Rounded corners */
+    width: 700px; /* Expanded width */
+    height: 500px; /* Expanded height */
+    background-color: rgb(60, 0, 255); /* Change this to any color you want the square to be when clicked */
+    pointer-events: none; /* Disable pointer events to prevent further clicks */
+}
+
+/* Style the elements inside the square */
+.square a {
+    font-size: 1.4rem;
+    mix-blend-mode: lighten;
+    display: none; /* Hide the links initially */
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: rgb(205, 190, 255);
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    pointer-events: auto; /* Re-enable pointer events for the links */
+    margin: 5px; /* Add some margin for spacing */
+}
+
+.square h1 {
+    display: none; /* Hide the header initially */
+    color: white;
+    margin: 10px 0;
+}
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons in a row */
+    justify-content: center;
+}
+
+/* Show the elements when the square is expanded */
+#toggle:checked + .square a,
+#toggle:checked + .square h1 {
+    display: block;
+}
+
+#toggle:checked + .square .button-container {
+    display: flex; /* Ensure the button container is displayed as flex */
+}
+
+.instruction-text {
+    position: fixed; /* Use absolute positioning for the instruction text */
+    top: 100px; /* Position it at the top of the container */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center it horizontally */
+    font-size: 1.5em;
+    color: black;
+    text-align: center;
+    pointer-events: none; /* Disable pointer events so it doesn't interfere */
+    transition: opacity 0.3s; /* Add transition for smooth hiding */
+}
+
+#toggle:checked ~ .instruction-text {
+    opacity: 0; /* Make it transparent when the checkbox is checked */
+    pointer-events: none; /* Disable pointer events to make sure it doesn't block clicks */
+}
