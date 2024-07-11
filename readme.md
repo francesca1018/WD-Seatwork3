@@ -54,7 +54,7 @@
 
 <!-- TODO: To be changed -->
 <!-- The following are just sample -->
-Backrooms inspired headers and footers design.
+Backrooms inspired landing headers and footers design and other website design themes.
 
 Guiding Question:
 
