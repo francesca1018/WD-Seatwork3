@@ -1,0 +1,49 @@
+body {
+    width: 100%;
+}
+
+.header {
+    background-color: rgb(255, 139, 139);
+    display: flex;
+    align-items: center;
+    padding: 0 20px; 
+}
+
+.logo-container {
+    margin-right: auto; 
+}
+
+.navigation {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+    flex-grow: 1; 
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    mix-blend-mode: multiply;
+}
+
+.content-1 {
+    height: 100vh;
+    background-color: red;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content-2 {
+    display: block;    
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    background-color: aquamarine;
+    height: 100vh;
+}
